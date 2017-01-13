@@ -1,0 +1,44 @@
+{
+  "name": "d3-plot",
+  "version": "0.1.0",
+  "description": "The library of d3.js components with a layered architecture and original d3.js philosophy principles",
+  "main": "src/d3-plot.js",
+  "scripts": {
+    "watch": "webpack --progress --colors --watch",
+    "start": "webpack-dev-server",
+    "build": "webpack",
+    "production": "webpack -p",
+    "test": "mocha --compilers js:babel-core/register --require babel-polyfill",
+    "test-watch": "mocha --compilers js:babel-core/register --require babel-polyfill --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/areshytko/d3-plot.git"
+  },
+  "keywords": [
+    "d3",
+    "visualization"
+  ],
+  "author": "Alexander Reshytko",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/areshytko/d3-plot/issues"
+  },
+  "homepage": "https://github.com/areshytko/d3-plot#readme",
+  "dependencies": {
+    "d3": "^4.4.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-polyfill": "^6.20.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "path": "^0.12.7",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
