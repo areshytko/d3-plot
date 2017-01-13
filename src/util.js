@@ -22,3 +22,12 @@ function getURLParams(search_string) {
 
     return search_string.length == 0 ? {} : parse({}, search_string.substr(1).split('&'));
 }
+
+
+const zip = (rows) => 0 == rows.length ? [] : rows[0].map( (_,i) => rows.map(row => row[i]));
+
+
+const mustBeDefined = () => { throw Error("Undefined error. The value must be defined by the client code.") };
+
+
+export { getURLParams, zip, mustBeDefined };

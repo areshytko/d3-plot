@@ -3,10 +3,13 @@
  */
 
 var figure = require('./figure').figure;
+var figureGrid = require('./figure').figureGrid;
 var axesCartesian = require('./axes').axesCartesian;
-
+var line = require('./geom/line').line;
 
 module.exports = {
     "figure": figure,
-    "axesCartesian": axesCartesian
+    "figureGrid": figureGrid,
+    "axesCartesian": axesCartesian,
+    "line": line
 };
