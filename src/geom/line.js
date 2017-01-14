@@ -3,6 +3,7 @@
  */
 
 import * as d3 from 'd3';
+import { mustBeDefined } from '../util';
 
 
 export function line(axes) {
@@ -10,7 +11,10 @@ export function line(axes) {
     var xScale = axes.xScale();
     var yScale = axes.yScale();
 
-    var xValue, yValue;
+    var xValue = mustBeDefined,
+        yValue = mustBeDefined;
+
+    var color = "black";
 
     function drawLine(selection) {
         selection.each(function (data) {
@@ -19,25 +23,37 @@ export function line(axes) {
                 .attr("d", d3.line().x( (d) => { return xScale(xValue(d)) })
                                     .y( (d) => { return yScale(yValue(d)) }))
                 .attr("fill", "none")
-                .attr("stroke", "black");
+                .attr("stroke", color);
         });
     }
 
-    drawLine.x = (x) => {
+    drawLine.x = function (x) {
         if (!arguments.length) return xValue;
         xValue = x;
         return drawLine;
     };
 
-    drawLine.y = (y) => {
+    drawLine.y = function (y) {
         if (!arguments.length) return yValue;
         yValue = y;
         return drawLine;
     };
     
-    drawLine.xScale = (xs) => {
+    drawLine.xScale = function (xs) {
         if (!arguments.length) return xScale;
         xScale = xs;
+        return drawLine;
+    };
+
+    drawLine.yScale = function (ys) {
+        if (!arguments.length) return yScale;
+        yScale = ys;
+        return drawLine;
+    };
+
+    drawLine.color = function (c) {
+        if (!arguments.length) return color;
+        color = c;
         return drawLine;
     };
 
