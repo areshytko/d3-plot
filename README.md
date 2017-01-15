@@ -1,2 +1,2 @@
 # d3-plot
-The library of d3.js components with a layered architecture and original d3.js philosophy principles
+d3.js plugin that contains layers of components intended to ease the process of creating standard scientific and statistical plots
